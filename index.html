@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Basic3D</title>
+        <style>
+            body { display: flex; min-height: 100vh; flex-direction: column; }
+            main { flex: 1 0 auto; }
+        </style>
+        <link rel=stylesheet href="../../doc/docs.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="dist/css/codemirror.css">
+        <link rel="stylesheet" href="dist/css/materialize.css">
+    </head>
+    <body>
+
+        <script src="dist/js/codemirror.js"></script>
+        <script src="dist/js/pascal.js"></script>
+        
+         <script>
+                function gotoDebug(){  
+                    debuggear();
+                    //localStorage.setItem("cadena3D", cadena3D);
+                    //localStorage.setItem("nativo3D", nativo3D);
+                    //window.location = "debug.html";
+                }
+                
+         </script>
+         
+        
+        <header>
+            <ul id="modosDeEdicion" class="dropdown-content">
+                <li><a href="basic.html">Básica</a></li>
+                <li><a href="medium.html">Intermedia</a></li>
+                <li><a href="hard.html">Avanzada</a></li>
+            </ul>
+            
+            <ul id="reportes" class="dropdown-content">
+                <li><a href="#" onclick="gotoErrores()">Errores</a></li>
+                <li><a href="#" onclick="getReporteSimbolos()">Tabla de Simbolos</a></li>
+                <li><a href="Optimizacion.html">Optimizacion</a></li>
+                <li><a href="#" onclick="getGraficaMetodo()">Grafo de Flujo</a></li>
+            </ul>
+            
+            <ul id="optimizacion" class="dropdown-content">
+                <li><a href="#" onclick="optimizarDebuggear()">Optimizar y Debuggear</a></li>
+                <li><a href="#" onclick="optimizarEjecutar()">Optimizar y Ejecutar</a></li>
+            </ul>
+
+            <nav>
+                <div class="nav-wrapper teal darken-4">
+                    <a href="index.html" class="brand-logo right thin" style="padding-right: 1em;">Basic3D <small>(modo avanzado)</small></a>
+                    <ul id="nav-mobile" class="left hide-on-med-and-down">
+                        <li class="active">
+                            <a href="#!" class="dropdown-button" data-activates="modosDeEdicion">
+                                <!--
+                                -->
+                                <i class="material-icons left">edit</i>
+                                Edición
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="debug.html">
+                                <!--
+                                -->
+                                <i class="material-icons left">bug_report</i>
+                                Debug
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#!" class="dropdown-button" data-activates="optimizacion">
+                                <!--
+                                -->
+                                <i class="material-icons left">trending_up</i>
+                                Optimizar
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#!" class="dropdown-button" data-activates="reportes">
+                                <!--
+                                -->
+                               
+                                <i class="material-icons left">list</i>
+                                Reportes
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="container" style="width: 95%;">
+                <div class="row" style="padding-top: 2em;">
+                    <div class="col s12">
+                        <div class="col s6" >
+                            <h5 class="light col s8">Programa en Basic3D</h5>
+                            <div class="col s4">
+                                <a href="#"  onclick="passToAssembler()" class="btn-floating darken-2 yellow"><i class="material-icons">send</i></a>
+                                <a href="#" onclick ="gotoDebug()" class="btn-floating darken-2 red"><i class="material-icons">bug_report</i></a>
+                                <a href="#" onclick ="ejecutar(0)" class="btn-floating darken-2 green"><i class="material-icons">play_arrow</i></a>
+                            </div>
+                           
+                        </div>
+
+                        <div class="col s7">
+                            <style type="text/css">.CodeMirror 
+                              {border-top: 1px solid black; border-bottom: 1px solid black;}
+                            </style>  
+                          <div id=nav>
+                                <div>
+                                  <ul id ="orders"></ul>              
+                                  <div><textarea id="code" name="code">
+                                  (* Example Pascal code *)
+                                  </textarea></div>
+                                </div>
+                          </div>
+                        </div>
+
+                        <div class="col s4">
+                            <style type="text/css">.CodeMirror 
+                              {border-top: 1px solid black; border-bottom: 1px solid black;}
+                            </style>  
+                          <div id=nav>
+                                <div>
+                                  <ul id ="orders"></ul>              
+                                  <div><textarea id="d3" name="code">
+                                  (* Example Pascal code *)
+                                  </textarea></div>
+                                </div>
+                          </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            <div   style="height: 700px;  width: 1000px;" id="visualization"></div>
+        </main>
+        <footer class="page-footer teal darken-4">
+            <div class="container">
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2017 Universidad de San Carlos de Guatemala
+                </div>
+            </div>
+        </footer>
+        
+        <script src="dist/js/materialize.min.js"></script>
+        <script src="dist/js/customInit.js"></script>
+        <script src="dist/bundle.js" charset="utf-8" ></script>
+    </body>
+</html>
+
+
+
+
+
+
+
