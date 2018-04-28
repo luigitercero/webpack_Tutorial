@@ -23,14 +23,7 @@ CodeMirror.defineMode("pascal", function() {
 "principal nuevo nada romper continuar estructura crearpuntero obtenerdireccion " +
 "reservarmemoria consultartamanio destruirpuntero si es_verdadero es_falso fin-si " +
 "evaluar_si es_igual_a defecto repetir_mientras hacer mientras ciclo_doble_condicion " +
-"repetir hasta_que repetir_contando hasta desde enciclar contador leer_teclado funcion "+
-"VARIABLE VACIO TRUE FALSE ENTERO DECIMAL LISTA PILA COLA " +
-"CARACTER BOOLEANO CONCATENAR IMPRIMIR CONVERTIRACADENA CONVERTIRAENTERO " +
-"CLASE PUBLICO PRIVADO PROTEGIDO ESTE HEREDA_DE IMPORTAR @SOBRESCRIBIR RETORNO " +
-"PRINCIPAL NUEVO NADA ROMPER CONTINUAR ESTRUCTURA CREARPUNTERO OBTENERDIRECCION " +
-"RESERVARMEMORIA CONSULTARTAMANIO DESTRUIRPUNTERO SI ES_VERDADERO ES_FALSO FIN-SI " +
-"EVALUAR_SI ES_IGUAL_A DEFECTO REPETIR_MIENTRAS HACER MIENTRAS CICLO_DOBLE_CONDICION " +
-"REPETIR HASTA_QUE REPETIR_CONTANDO HASTA DESDE ENCICLAR CONTADOR LEER_TECLADO FUNCION");
+"repetir hasta_que repetir_contando hasta desde enciclar contador leer_teclado funcion ");
   var atoms = {"null": true};
 
   var isOperatorChar = /[+\-*&%=<>!?|\/]/;
@@ -68,8 +61,8 @@ CodeMirror.defineMode("pascal", function() {
     }
     stream.eatWhile(/[\w\$_]/);
     var cur = stream.current();
-    if (keywords.propertyIsEnumerable(cur)) return "keyword";
-    if (atoms.propertyIsEnumerable(cur)) return "atom";
+    if (keywords.propertyIsEnumerable(cur.toLowerCase())) return "keyword";
+    if (atoms.propertyIsEnumerable(cur.toLowerCase())) return "atom";
     return "variable";
   }
 
