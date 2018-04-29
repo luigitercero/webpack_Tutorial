@@ -39,37 +39,16 @@
     </style>
     <body>
         <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-        <h1 id = "holamundo"></h1>
-       <script>
-            // Initialize Firebase
-            var config = {
-              apiKey: "AIzaSyD41kp9ZBPJDX7-yfQJeAY_iajN0NiKZC0",
-              authDomain: "compiladore2.firebaseapp.com",
-              databaseURL: "https://compiladore2.firebaseio.com",
-              projectId: "compiladore2",
-              storageBucket: "compiladore2.appspot.com",
-              messagingSenderId: "743813730441"
-            };
-            firebase.initializeApp(config);
-            var holaMundo =document.getElementById('holamundo');
-            var dbRef =firebase.database().ref.child('compiladore2/text');
-            dbRef.on('value',snap =>holaMundo.innerText = snap.val());
-        </script>
-        
-    
         <script src="dist/socket.io.js"></script>
         <script src="dist/jquery-2.1.1.min.js"></script>
         
          <script>
                 function gotoDebug(){  
                     debuggear();
-                    //localStorage.setItem("cadena3D", cadena3D);
-                    //localStorage.setItem("nativo3D", nativo3D);
-                    //window.location = "debug.html";
                 }
-
          </script>
        
+        
         <header>
             <ul id="modosDeEdicion" class="dropdown-content">
                 <li><a href="basic.html">Básica</a></li>
@@ -167,7 +146,7 @@
                 <div class="row">
                    
                     <div class="input-field col s2 offset-s2">
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <button id = "btnSend"class="btn waves-effect waves-light" type="submit" name="action">Submit
                             <i class="material-icons right">send</i>
                         </button>
                     </div>
@@ -198,7 +177,7 @@
         
         <script src="dist/js/materialize.min.js"></script>    
         <script src="dist/js/metodosLLamadas.js"></script>
-    
+        <script src="dist/js/almacenamiento/fire.js"></script>    
     </body>
 </html>
 

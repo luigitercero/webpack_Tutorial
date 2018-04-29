@@ -40,9 +40,6 @@
     <body>
 
 
-        <script src="dist/js/codemirror.js"></script>
-        <script src="dist/js/pascal.js"></script>
-        <script src="dist/js/activeline.js"></script>
         <script src="dist/socket.io.js"></script>
         <script src="dist/jquery-2.1.1.min.js"></script>
         
@@ -131,8 +128,8 @@
               
                 <div class="row">
                     <div class="input-field col s6 offset-s2">
-                      <textarea id="codigo" class="materialize-textarea"></textarea>
-                      <label for="codigo">Codigo</label>
+                      <textarea id="codigo1" class="materialize-textarea"></textarea>
+                      <label for="codigo1">Codigo</label>
                     </div>
                 </div>
                 
@@ -147,13 +144,13 @@
 
                 <div class="row">
                     <div class="input-field col s6 offset-s2">
-                      <textarea id="codigo" class="materialize-textarea"></textarea>
-                      <label for="codigo">Codigo</label>
+                      <textarea id="codigo2" class="materialize-textarea"></textarea>
+                      <label for="codigo2">Codigo</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s2 offset-s2">
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <button id = "butotn"class="btn waves-effect waves-light" type="submit" name="action">Submit
                             <i class="material-icons right">send</i>
                         </button>
                     </div>                              
@@ -171,20 +168,10 @@
                 </div>
             </div>
         </footer>
-        
+        <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
         <script src="dist/js/materialize.min.js"></script>
-        <script src="dist/js/customInit.js"></script>
-        <!--
-        <script src="dist/bundle.js" charset="utf-8" ></script>
         
-                        <h1>Hello World!</h1>
-        <div id="future"></div>
-        <form id="form" id="chat_form">
-            <input id="chat_input1" type="text">
-            <input type="submit" value="Send">
-        </form>-->        
-<script src="dist/js/metodosLLamadas.js"></script>
-    
+        <script src="dist/js/almacenamiento/practicar.js"></script> 
     </body>
 </html>
 
