@@ -27,9 +27,11 @@
           button.id = snap.key;
           button.className ="waves-effect waves-light btn";
           button.innerText = "practicar";
+          button.href ="practica.html";
+          button.type ="submit";
           button.onclick = function(){
               console.log(snap.key);
-            fnProcesaPaciente (snap.key,dbLenccion);return false;
+            fnProcesaPaciente (snap.key,dbLenccion);
           };
           th2.appendChild(button);
           tr.appendChild(th);
@@ -58,9 +60,9 @@
 function fnProcesaPaciente(comp,bd){
     
     bd.set({
-        leccion:comp,
-        
+        leccion:comp, 
   });
+
 }
 
 

@@ -3,7 +3,7 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>Basic3D</title>
+        <title>Nueva Leccion</title>
         <style>
             body { display: flex; min-height: 100vh; flex-direction: column; }
             main { flex: 1 0 auto; }
@@ -15,28 +15,6 @@
 
     </head>
 
-    <style>
-    .fixedbutton1 {
-    position: fixed;
-    bottom: 50px;
-    right: 20px; 
-}
-.fixedbutton2 {
-    position: fixed;
-    bottom: 100px;
-    right: 20px; 
-}
-.fixedbutton3 {
-    position: fixed;
-    bottom: 150px;
-    right: 20px; 
-}
-.fixedbutton4 {
-    position: fixed;
-    bottom: 200px;
-    right: 20px; 
-}
-    </style>
     <body>
         <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
         <script src="dist/socket.io.js"></script>
@@ -49,36 +27,15 @@
          </script>
        
         
-        <header>
-            <ul id="modosDeEdicion" class="dropdown-content">
-                <li><a href="basic.html">Básica</a></li>
-                <li><a href="medium.html">Intermedia</a></li>
-                <li><a href="hard.html">Avanzada</a></li>
-            </ul>
-            <ul id="reportes" class="dropdown-content">
-                <li><a href="#" onclick="gotoErrores()">Errores</a></li>
-                <li><a href="#" onclick="getReporteSimbolos()">Tabla de Simbolos</a></li>
-                <li><a href="Optimizacion.html">Optimizacion</a></li>
-                <li><a href="#" onclick="getGraficaMetodo()">Grafo de Flujo</a></li>
-            </ul>            
-            <ul id="optimizacion" class="dropdown-content">
-                <li><a href="#" onclick="optimizarDebuggear()">Optimizar y Debuggear</a></li>
-                <li><a href="#" onclick="optimizarEjecutar()">Optimizar y Ejecutar</a></li>
-            </ul>
+       <header>
+
             <nav>
                 <div class="nav-wrapper teal darken-4">
-                    <a href="index.html" class="brand-logo right thin" style="padding-right: 1em;">Basic3D <small>(modo avanzado)</small></a>
+                    <a href="principal.html" class="brand-logo right thin" style="padding-right: 1em;">Nueva Leccion<small>A Coach</small></a>
                     <ul id="nav-mobile" class="left hide-on-med-and-down">
-                        <li class="active">
-                            <a href="#!" class="dropdown-button" data-activates="modosDeEdicion">
-                                <!--
-                                -->
-                                <i class="material-icons left">edit</i>
-                                Edición
-                            </a>
-                        </li>
+                      
                         <li>
-                            <a target="_blank" href="debug.html">
+                            <a target="_blank" href="index.html">
                                 <!--
                                 -->
                                 <i class="material-icons left">bug_report</i>
@@ -86,20 +43,29 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#!" class="dropdown-button" data-activates="optimizacion">
+                            <a href="nuevaLeccion.html" class="dropdown-button" data-activates="optimizacion">
                                 <!--
                                 -->
                                 <i class="material-icons left">trending_up</i>
-                                Optimizar
+                                Gcoach
+                            </a>
+                        </li>  
+                        <li>
+                            <a href="nuevaLeccion.html" class="dropdown-button" data-activates="modosDeEdicion">
+                                <!--
+                                -->
+                                <i class="material-icons left">edit</i>
+                                ACoah
                             </a>
                         </li>
+                        
                         <li>
-                            <a href="#!" class="dropdown-button" data-activates="reportes">
+                            <a href="principal.html" class="dropdown-button" data-activates="reportes">
                                 <!--
                                 -->
                                
                                 <i class="material-icons left">list</i>
-                                Reportes
+                                inicio
                             </a>
                         </li>
                     </ul>

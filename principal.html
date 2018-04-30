@@ -3,7 +3,7 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>Basic3D</title>
+        <title>Inicio</title>
         <style>
             body { display: flex; min-height: 100vh; flex-direction: column; }
             main { flex: 1 0 auto; }
@@ -56,56 +56,32 @@
 
          </script>
         <header>
-            <ul id="modosDeEdicion" class="dropdown-content">
-                <li><a href="basic.html">Básica</a></li>
-                <li><a href="medium.html">Intermedia</a></li>
-                <li><a href="hard.html">Avanzada</a></li>
-            </ul>
-            <ul id="reportes" class="dropdown-content">
-                <li><a href="#" onclick="gotoErrores()">Errores</a></li>
-                <li><a href="#" onclick="getReporteSimbolos()">Tabla de Simbolos</a></li>
-                <li><a href="Optimizacion.html">Optimizacion</a></li>
-                <li><a href="#" onclick="getGraficaMetodo()">Grafo de Flujo</a></li>
-            </ul>            
-            <ul id="optimizacion" class="dropdown-content">
-                <li><a href="#" onclick="optimizarDebuggear()">Optimizar y Debuggear</a></li>
-                <li><a href="#" onclick="optimizarEjecutar()">Optimizar y Ejecutar</a></li>
-            </ul>
             <nav>
                 <div class="nav-wrapper teal darken-4">
-                    <a href="index.html" class="brand-logo right thin" style="padding-right: 1em;">Basic3D <small>(modo avanzado)</small></a>
+                    <a href="principal.html" class="brand-logo right thin" style="padding-right: 1em;">Practicas</a>
                     <ul id="nav-mobile" class="left hide-on-med-and-down">
-                        <li class="active">
-                            <a href="#!" class="dropdown-button" data-activates="modosDeEdicion">
-                                <!--
-                                -->
-                                <i class="material-icons left">edit</i>
-                                Edición
-                            </a>
-                        </li>
                         <li>
-                            <a target="_blank" href="debug.html">
-                                <!--
-                                -->
+                            <a target="_blank" href="index.html">
                                 <i class="material-icons left">bug_report</i>
                                 Debug
                             </a>
                         </li>
                         <li>
-                            <a href="#!" class="dropdown-button" data-activates="optimizacion">
-                                <!--
-                                -->
+                            <a href="nuevaLeccion.html" class="dropdown-button" data-activates="optimizacion">
                                 <i class="material-icons left">trending_up</i>
-                                Optimizar
+                                Gcoach
+                            </a>
+                        </li>  
+                        <li>
+                            <a href="nuevaLeccion.html" class="dropdown-button" data-activates="modosDeEdicion">
+                                <i class="material-icons left">edit</i>
+                                ACoah
                             </a>
                         </li>
                         <li>
-                            <a href="#!" class="dropdown-button" data-activates="reportes">
-                                <!--
-                                -->
-                               
+                            <a href="principal.html" class="dropdown-button" data-activates="reportes">
                                 <i class="material-icons left">list</i>
-                                Reportes
+                                inicipo
                             </a>
                         </li>
                     </ul>
@@ -121,7 +97,6 @@
                             <thead>
                               <tr>
                                   <th>Titulo</th>
-                                  
                               </tr>
                             </thead>
                             <tbody id = "lecciones">
@@ -130,26 +105,7 @@
                     </div>          
                 </div>
                 <pre id = "objeto"></pre>
-                <ul id = "lista"></ul>
-                <div class="row">
-                    <div class="input-field col s1 offset-s2">
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Editor
-                            <i class="material-icons right">send</i>
-                        </button>
-                    </div>
-                    <div class="input-field col s1 offset-s2">
-                        <button class="btn waves-effect waves-light" type="submit" name="action">A-coah
-                            <i class="material-icons right">send</i>
-                        </button>
-                    </div>
-                    <div class="input-field col s1 offset-s2">
-                        <button class="btn waves-effect waves-light" type="submit" name="action">B-coach
-                            <i class="material-icons right">send</i>
-                        </button>
-                    </div>
-                             
-                </div>
-                        
+                <ul id = "lista"></ul>        
             </form>
         </div>
         </main>

@@ -7,30 +7,67 @@ socket.on('connect', function(data) {
 socket.on('broad', function(data) {
         $('#future').append(data + "<br/>");
   });
-
+  let a = 0;
 socket.on('pila', function(data) {
-    $('#pila').empty()
-    let a =0;
-    data.forEach(element => {
+    if (data == "limpiar") {
+        $('#pila').empty()
+        a=0;
+    }else{
         $('#pila').append("<tr>"
         +"<th>"+a + "</th>"
-        + "<th>"+element + "</th>"
+        + "<th>"+data + "</th>"
         +"</tr>"); 
         a++;
-    }); 
+    }
 });
+
+socket.on('ambito', function(data) {
+    if (data == "limpiar") {
+        $('#ambito').empty()
+        a=0;
+    }else{
+        $('#ambito').append("<tr>"
+        +"<th>"+a + "</th>"
+        + "<th>"+data[0] + "</th>"
+        + "<th>"+data[1] + "</th>"
+        +"<th>"+data[2] + "</th>"
+        + "<th>"+data[3] + "</th>"
+        + "<th>"+data[4] + "</th>"
+        + "<th>"+data[6] + "</th>"
+        + "<th>"+data[5] + "</th>"
+        +"</tr>"); 
+        a++;
+    }
+});
+socket.on('ptr',function(data){
+    $('#ptr').empty()
+    $('#ptr').append("ptr: "+data);
+})
+socket.on('pth',function(data){
+    $('#pth').empty()
+    $('#pth').append("pth: "+data);
+})
+
+socket.on('op',function(data){
+    $('#op').empty()
+    $('#op').append("op: "+data);
+})
+
 
 socket.on('heap', function(data) {
     
-    $('#heap').empty()
-    let a = 0;
-    data.forEach(element => {
+    if (data == "limpiar") {
+        $('#heap').empty()
+        a=0;
+    }else {
         $('#heap').append("<tr>"
-            +"<th>"+a + "</th>"
-            + "<th>"+element + "</th>"
-            +"</tr>"); 
-            a++;
-    });   
+        +"<th>"+a + "</th>"
+        + "<th>"+data + "</th>"
+        +"</tr>"); 
+        a++;
+    }
+   
+    
 });
 
 socket.on('archivo', function(data) {
