@@ -33,8 +33,9 @@ socket.on('ambito', function(data) {
         +"<th>"+data[2] + "</th>"
         + "<th>"+data[3] + "</th>"
         + "<th>"+data[4] + "</th>"
-        + "<th>"+data[6] + "</th>"
         + "<th>"+data[5] + "</th>"
+        + "<th>"+data[6] + "</th>"
+        + "<th>"+data[7] + "</th>"
         +"</tr>"); 
         a++;
     }
@@ -130,4 +131,14 @@ $('#siguiente').click(function(e){
     socket.emit('siguiente', "a siguienteLinea");
 });
 
+
+$('#auto').click(function(e){
+    e.preventDefault();
+    socket.emit('auto', "a siguienteLinea");
+});
+
+$('#alto').click(function(e){
+    e.preventDefault();
+    socket.emit('alto', "a siguienteLinea");
+});
 

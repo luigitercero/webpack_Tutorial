@@ -2,7 +2,7 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>Basic3D</title>
+        <title>Debuguer</title>
         <style>
             body { display: flex; min-height: 100vh; flex-direction: column; }
             main { flex: 1 0 auto; }
@@ -35,6 +35,16 @@
     bottom: 200px;
     right: 20px; 
 }
+.fixedbutton5 {
+    position: fixed;
+    bottom: 250px;
+    right: 20px; 
+}
+.fixedbutton6 {
+    position: fixed;
+    bottom: 300px;
+    right: 20px; 
+}
     </style>
     <body>
 
@@ -52,65 +62,34 @@
                     //localStorage.setItem("nativo3D", nativo3D);
                     //window.location = "debug.html";
                 }
-
          </script>
         <header>
-            <ul id="modosDeEdicion" class="dropdown-content">
-                <li><a href="basic.html">Básica</a></li>
-                <li><a href="medium.html">Intermedia</a></li>
-                <li><a href="hard.html">Avanzada</a></li>
-            </ul>
-            <ul id="reportes" class="dropdown-content">
-                <li><a href="#" onclick="gotoErrores()">Errores</a></li>
-                <li><a href="#" onclick="getReporteSimbolos()">Tabla de Simbolos</a></li>
-                <li><a href="Optimizacion.html">Optimizacion</a></li>
-                <li><a href="#" onclick="getGraficaMetodo()">Grafo de Flujo</a></li>
-            </ul>            
-            <ul id="optimizacion" class="dropdown-content">
-                <li><a href="#" onclick="optimizarDebuggear()">Optimizar y Debuggear</a></li>
-                <li><a href="#" onclick="optimizarEjecutar()">Optimizar y Ejecutar</a></li>
-            </ul>
-            <nav>
-                <div class="nav-wrapper teal darken-4">
-                    <a href="index.html" class="brand-logo right thin" style="padding-right: 1em;">Basic3D <small>(modo avanzado)</small></a>
-                    <ul id="nav-mobile" class="left hide-on-med-and-down">
-                        <li class="active">
-                            <a href="#!" class="dropdown-button" data-activates="modosDeEdicion">
-                                <!--
-                                -->
-                                <i class="material-icons left">edit</i>
-                                Edición
-                            </a>
-                        </li>
-                        <li>
-                            <a target="_blank" href="debug.html">
-                                <!--
-                                -->
-                                <i class="material-icons left">bug_report</i>
-                                Debug
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#!" class="dropdown-button" data-activates="optimizacion">
-                                <!--
-                                -->
-                                <i class="material-icons left">trending_up</i>
-                                Optimizar
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#!" class="dropdown-button" data-activates="reportes">
-                                <!--
-                                -->
-                               
-                                <i class="material-icons left">list</i>
-                                Reportes
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+                <nav>
+                    <div class="nav-wrapper teal darken-4">
+                        <a href="principal.html" class="brand-logo right thin" style="padding-right: 1em;">GccCompiler<small>debuguer</small></a>
+                        <ul id="nav-mobile" class="left hide-on-med-and-down">
+                            <li>
+                                <a target="_blank" href="index.html">
+                                    <i class="material-icons left">bug_report</i>
+                                    Debug
+                                </a>
+                            </li>
+                            <li>
+                                <a href="nuevaLeccion.html" class="dropdown-button" data-activates="optimizacion">
+                                    <i class="material-icons left">trending_up</i>
+                                    Gcoach
+                                </a>
+                            </li>  
+                            <li>
+                                <a href="nuevaLeccion.html" class="dropdown-button" data-activates="modosDeEdicion">
+                                    <i class="material-icons left">edit</i>
+                                    ACoah
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
         <main> 
             <div class="container" style="width: 95%;">
                    
@@ -122,20 +101,18 @@
                                     <input type="submit" value="Send">
                             </form>
                             </div>
-
-                    
                         <div class="col s6" >
                             <h5 class="light col s8">parser </h5>
-                            
                             <div class="col s4 fixed">
                                 <a id = "siguiente" class="btn-floating darken-2 yellow fixedbutton1"><i class="material-icons">send</i></a>
-                                <a id = "debuguear"  class="btn-floating darken-2 red fixedbutton2"><i class="material-icons">bug_report</i></a>
-                                <a id = "ejecutar"  class="btn-floating darken-2 green fixedbutton3"><i class="material-icons">play_arrow</i></a>
+                                <a id = "debuguear"  class="btn-floating grey lighten-2 fixedbutton2"><i class="material-icons">bug_report</i></a>
+                                <a id = "ejecutar"  class="btn-floating darken-2 green fixedbutton6"><i class="material-icons">build</i></a>
+                                <a id = "alto"  class="btn-floating darken-2 red fixedbutton4"><i class="material-icons">stop</i></a>
+                                <a id = "salir"  class="btn-floating darken-2 light-green darken-3 fixedbutton5"><i class="material-icons">arrow_drop_up</i></a>
+                                <a id = "auto"  class="btn-floating darken-2 light-blue darken-3 fixedbutton3"><i class="material-icons">flash_auto</i></a>
                                 
                             </div>
-                        
                         </div>
-
                         <div class="col s7">
                             <style type="text/css">.CodeMirror 
                               {border-top: 1px solid black; border-bottom: 1px solid black;}
@@ -149,7 +126,6 @@
                                 </div>
                           </div>
                         </div>
-
                         <div class="col s4">
                             <style type="text/css">.CodeMirror 
                               {border-top: 1px solid black; border-bottom: 1px solid black;}
@@ -166,20 +142,27 @@
                     </div>
                 </div>
             </div>
-            <div   style="height: 700px;  width: 1000px;" id="visualization">
-                    
+            <section>
+                <div   style="height: 700px;  width: 1000px; " id="visualization">
                     <div class="row">
-                            <div class="col s12 offset-s2">
-                              <ul class="tabs">
-                                <li class="tab col s2"><a href="#test1">Pila</a></li>
-                                <li class="tab col s2"><a href="#test2">Heap</a></li>
-                                <li class="tab col s3"><a href="#test3">tabla Simbolos</a></li>
-                                <li class="tab col s2"><a href="#test4" class="active">consola</a></li>
-                                <li class="tab col s2"><a href="#test5">error</a></li>
-                              </ul>
-                            </div>
-                            <div class="col s12 offset-s2">
-                            <div id="test1" class="col s12">
+                        <div class="col s12 offset-s5">
+                            <div class="tab col s2" id = "ptr">ptr = 0</div>
+                            <div class="tab col s2" id = "pth">heap = 0</div>
+                            <div class="tab col s4" id = "op">op = 0</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 offset-s2">
+                          <ul class="tabs">
+                            <li class="tab col s2"><a href="#test1">Pila</a></li>
+                            <li class="tab col s2"><a href="#test2">Heap</a></li>
+                            <li class="tab col s3"><a href="#test3">tabla Simbolos</a></li>
+                            <li class="tab col s2"><a href="#test4" class="active">consola</a></li>
+                            <li class="tab col s2"><a href="#test5">error</a></li>
+                          </ul>
+                        </div>
+                        <div  class="col s12 offset-s2">
+                            <div id="test1" class="col s5">
                                 <table>
                                     <thead>
                                       <tr>
@@ -191,39 +174,57 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div id="test2" class="col s12">
-                                    <table>
-                                            <thead>
-                                              <tr>
-                                                  <th>posicion</th>
-                                                  <th>valor</th>
-                                              </tr>
-                                            </thead>
-                                            <tbody id = "heap">
-                                            </tbody>
-                                        </table>
+                            <div id="test2" class="col s5">
+                                <table>
+                                    <thead>
+                                      <tr>
+                                          <th>posicion</th>
+                                          <th>valor</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody id = "heap">
+                                    </tbody>
+                                </table>
                             </div>
-                            <div id="test3" class="col s12">Test 3</div>
+                            <div id="test3" class="col s12">
+                                <table>
+                                    <thead>
+                                      <tr>
+                                          <th>#</th>
+                                          <th>Nombre</th>
+                                          <th>tipo</th>
+                                          <th>visibilidad</th>
+                                          <th>tam</th>
+                                          <th>possAmbito</th>
+                                          <th>linea</th>
+                                          <th>lugar</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody id = "ambito">
+                                    </tbody>
+                                </table>
+                            </div>
                             <div id="test4" class="col s12">
-                                    <table>
-                                            <tbody id = "consola">
-                                            </tbody>
-                                    </table>
+                                <table>
+                                    <tbody id = "consola">
+                                    </tbody>
+                                </table>
                             </div>
                             <div id="test5" class="col s12">
-                                    <div   style="height: 1000px;  width: 200px;" id="visualization">
-                                    <textarea style="height:400px; width: 956px" id = "error"class="form-control" rows="100" cols="100">
-                                            error</textarea>
-                                    </div>
+                                <div   style="height: 1000px;  width: 200px;" id="visualization">
+                                <textarea style="height:400px; width: 956px" id = "error"class="form-control" rows="100" cols="100">
+                                        error</textarea>
+                                </div>
                             </div>
-                            </div>
+                        </div>
                     </div>
-            </div>
-                  <script>
-                        // Or with jQuery
-                        $(document).ready(function(){
-                        $('.tabs').tabs();});
-                  </script>
+                </div>
+            </section>
+            <script>
+                  // Or with jQuery
+                  $(document).ready(function(){
+                  $('.tabs').tabs();});
+            </script>
         </main>
         <footer class="page-footer teal darken-4">
             <div class="container">
