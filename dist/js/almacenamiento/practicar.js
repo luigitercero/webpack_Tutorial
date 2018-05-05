@@ -14,8 +14,8 @@
     
     const labelTitulo = document.getElementById('titulo');
     const labelExplicacion = document.getElementById('explicacion');
-    const inputCodigo1 = document.getElementById('codigo1');
-    const inputCodigo2 = document.getElementById('codigo2');
+    //const inputCodigo1 = document.getElementById('codigo1');
+    //const inputCodigo2 = document.getElementById('codigo2');
     const labelTarea = document.getElementById('tarea');
     
     const dbRefObject = firebase.database().ref().child('objeto');
@@ -36,7 +36,7 @@
             console.log (snapshot.key )
             labelTitulo.innerText = s.titulo;
             labelExplicacion.innerText = s.explicacion;
-            inputCodigo1.innerText = s.codigo
+            editor.setValue (s.codigo);
             labelTarea.innerText = s.enunciado
         }
     }); 

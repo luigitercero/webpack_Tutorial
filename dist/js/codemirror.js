@@ -3836,7 +3836,8 @@ function endOperation_finish(op) {
   if (op.scrollToPos) {
     var rect = scrollPosIntoView(cm, clipPos(doc, op.scrollToPos.from),
                                  clipPos(doc, op.scrollToPos.to), op.scrollToPos.margin)
-    maybeScrollWindow(cm, rect)
+    /** se comento esto para poder trabajar bien con el debuguer*/
+    //maybeScrollWindow(cm, rect)
   }
 
   // Fire events for markers that are hidden/unidden by editing or

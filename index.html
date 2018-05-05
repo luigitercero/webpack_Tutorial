@@ -1,244 +1,339 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>Debuguer</title>
-        <style>
-            body { display: flex; min-height: 100vh; flex-direction: column; }
-            main { flex: 1 0 auto; }
-        </style>
-        <link rel=stylesheet href="../../doc/docs.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="dist/css/codemirror.css">
-        <link rel="stylesheet" href="dist/css/materialize.css">
 
-    </head>
-
+<head>
+    <meta charset="UTF-8">
+    <title>Debuguer</title>
     <style>
-    .fixedbutton1 {
-    position: fixed;
-    bottom: 50px;
-    right: 20px; 
-}
-.fixedbutton2 {
-    position: fixed;
-    bottom: 100px;
-    right: 20px; 
-}
-.fixedbutton3 {
-    position: fixed;
-    bottom: 150px;
-    right: 20px; 
-}
-.fixedbutton4 {
-    position: fixed;
-    bottom: 200px;
-    right: 20px; 
-}
-.fixedbutton5 {
-    position: fixed;
-    bottom: 250px;
-    right: 20px; 
-}
-.fixedbutton6 {
-    position: fixed;
-    bottom: 300px;
-    right: 20px; 
-}
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
     </style>
-    <body>
+    <link rel=stylesheet href="../../doc/docs.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/codemirror.css">
+    <link rel="stylesheet" href="dist/css/materialize.css">
+
+</head>
+
+<style>
+    .fixedbutton1 {
+        position: fixed;
+        bottom: 50px;
+        right: 20px;
+    }
+
+    .fixedbutton2 {
+        position: fixed;
+        bottom: 100px;
+        right: 20px;
+    }
+
+    .fixedbutton3 {
+        position: fixed;
+        bottom: 150px;
+        right: 20px;
+    }
+
+    .fixedbutton4 {
+        position: fixed;
+        bottom: 200px;
+        right: 20px;
+    }
+
+    .fixedbutton5 {
+        position: fixed;
+        bottom: 250px;
+        right: 20px;
+    }
+
+    .fixedbutton6 {
+        position: fixed;
+        bottom: 300px;
+        right: 20px;
+    }
 
 
-        <script src="dist/js/codemirror.js"></script>
-        <script src="dist/js/pascal.js"></script>
-        <script src="dist/js/activeline.js"></script>
-        <script src="dist/socket.io.js"></script>
-        <script src="dist/jquery-2.1.1.min.js"></script>
-        
-         <script>
-                function gotoDebug(){  
-                    debuggear();
-                    //localStorage.setItem("cadena3D", cadena3D);
-                    //localStorage.setItem("nativo3D", nativo3D);
-                    //window.location = "debug.html";
-                }
-         </script>
-        <header>
-                <nav>
-                    <div class="nav-wrapper teal darken-4">
-                        <a href="principal.html" class="brand-logo right thin" style="padding-right: 1em;">GccCompiler<small>debuguer</small></a>
-                        <ul id="nav-mobile" class="left hide-on-med-and-down">
-                            <li>
-                                <a target="_blank" href="index.html">
-                                    <i class="material-icons left">bug_report</i>
-                                    Debug
-                                </a>
+    header,
+    main,
+    footer {
+        padding-left: 210px;
+    }
+
+    .slide {
+        padding-left: 10px;
+    }
+
+    @media only screen and (max-width: 992px) {
+        header,
+        main,
+        footer {
+            padding-left: 0;
+        }
+    }
+</style>
+
+<body>
+
+
+    <script src="dist/js/codemirror.js"></script>
+    <script src="dist/js/pascal.js"></script>
+    <script src="dist/js/activeline.js"></script>
+    <script src="dist/socket.io.js"></script>
+    <script src="dist/jquery-2.1.1.min.js"></script>
+
+    <script>
+        function gotoDebug() {
+            debuggear();
+            //localStorage.setItem("cadena3D", cadena3D);
+            //localStorage.setItem("nativo3D", nativo3D);
+            //window.location = "debug.html";
+        }
+    </script>
+    <header>
+        <nav>
+            <div class="nav-wrapper teal darken-4">
+                <a href="principal.html" class="brand-logo right thin" style="padding-right: 1em;">GccCompiler
+                    <small>debuguer</small>
+                </a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li>
+                        <a target="_blank" href="index.html">
+                            <i class="material-icons left">bug_report</i>
+                            Debug
+                        </a>
+                    </li>
+                    <li>
+                        <a href="nuevaLeccion.html" class="dropdown-button" data-activates="optimizacion">
+                            <i class="material-icons left">trending_up</i>
+                            Gcoach
+                        </a>
+                    </li>
+                    <li>
+                        <a href="nuevaLeccion.html" class="dropdown-button" data-activates="modosDeEdicion">
+                            <i class="material-icons left">edit</i>
+                            ACoah
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <ul id="slide-out" style="width:10px;" class="sidenav sidenav-fixed">
+            <li>
+                <a href="#!">First Sidebar Link</a>
+            </li>
+            <li>
+                <a href="#!">Second Sidebar Link</a>
+            </li>
+        </ul>
+        </a>
+        <ul id="slide-out" style="width:210px;" class="sidenav sidenav-fixed">
+            <ul class="collapsible">
+
+                <li>
+                    <div class="collapsible-header">
+                        <i class="material-icons">format_align_justify</i>Pila</div>
+                    <div class="collapsible-body">
+                        <div id="pilaTam">
+                            <table>
+                                <thead class="blue-text text-darken-2">
+                                    <tr>
+                                        <th>posicion</th>
+                                        <th>valor</th>
+                                    </tr>
+                                </thead>
+                                <tbody style="padding-top: 2em; padding-left: 1em;" id="pila">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header">
+                        <i class="material-icons">trending_up</i>Heap</div>
+                    <div style="padding-top: 2em; padding-left: 1em;" class="collapsible-body">
+                        <div id="heapTamp">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>posicion</th>
+                                        <th>valor</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="heap">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <form style="padding-top: 2em; padding-left: 1em;" id="archivo" id="chat_form">
+                        <input id="chat_input" type="text">
+                        <input type="submit" value="Send">
+                    </form>
+                </li>
+            </ul>
+        </ul>
+
+    </header>
+    <main>
+
+        <div class="col s4 fixed">
+            <a id="siguiente" class="btn-floating darken-2 yellow fixedbutton1">
+                <i class="material-icons">send</i>
+            </a>
+            <a id="debuguear" class="btn-floating grey lighten-2 fixedbutton2">
+                <i class="material-icons">bug_report</i>
+            </a>
+            <a id="ejecutar" class="btn-floating darken-2 green fixedbutton6">
+                <i class="material-icons">build</i>
+            </a>
+            <a id="alto" class="btn-floating darken-2 red fixedbutton4">
+                <i class="material-icons">stop</i>
+            </a>
+            <a id="salir" class="btn-floating darken-2 light-green darken-3 fixedbutton5">
+                <i class="material-icons">arrow_drop_up</i>
+            </a>
+            <a id="auto" class="btn-floating darken-2 light-blue darken-3 fixedbutton3">
+                <i class="material-icons">flash_auto</i>
+            </a>
+
+        </div>
+        <div class="container" style="width: 98%;">
+            <div class="row" style="padding-top: 2em;">
+                <div class="col s12">
+                    <div class="col s6">
+                        <h5 class="light col s8">parser </h5>
+
+                    </div>
+                    <div class="col s7">
+                        <style type="text/css">
+                            .CodeMirror {
+                                border-top: 1px solid black;
+                                border-bottom: 1px solid black;
+                            }
+                        </style>
+                        <div id=nav>
+                            <div>
+                                <ul id="orders"></ul>
+                                <div>
+                                    <textarea id="code" name="code">
+                                  (* Example Pascal code *)
+                                  </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s4">
+                        <style type="text/css">
+                            .CodeMirror {
+                                border-top: 1px solid black;
+                                border-bottom: 1px solid black;
+                            }
+                        </style>
+                        <div id=nav>
+                            <div>
+                                <ul id="orders"></ul>
+                                <div>
+                                    <textarea id="d3" name="code">
+                                  (* Example Pascal code *)
+                                  </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section>
+            <div style="height: 700px;  width: 900px; " id="visualization">
+                <!--
+                <div class="row">
+                    <div class="col s12 offset-s1">
+                        
+                    </div>
+                </div>
+            -->
+                <div class="row">
+                    <div class="col s12 offset-s1">
+                        <div class="tab col s4" id="ptr">ptr = 0</div>
+                        <div class="tab col s4" id="pth">heap = 0</div>
+                        <div class="tab col s4" id="op">op = 0</div>
+                        <ul class="tabs">
+                            <li class="tab col s3">
+                                <a href="#test3">tabla Simbolos</a>
                             </li>
-                            <li>
-                                <a href="nuevaLeccion.html" class="dropdown-button" data-activates="optimizacion">
-                                    <i class="material-icons left">trending_up</i>
-                                    Gcoach
-                                </a>
-                            </li>  
-                            <li>
-                                <a href="nuevaLeccion.html" class="dropdown-button" data-activates="modosDeEdicion">
-                                    <i class="material-icons left">edit</i>
-                                    ACoah
-                                </a>
+                            <li class="tab col s2">
+                                <a href="#test4" class="active">consola</a>
+                            </li>
+                            <li class="tab col s2">
+                                <a href="#test5">error</a>
                             </li>
                         </ul>
+
                     </div>
-                </nav>
-            </header>
-        <main> 
-            <div class="container" style="width: 95%;">
-                   
-                <div class="row" style="padding-top: 2em;">
-                    <div class="col s12">
-                            <div class="col s4 offset-s6">
-                            <form id="archivo" id="chat_form">
-                                    <input id="chat_input" type="text">
-                                    <input type="submit" value="Send">
-                            </form>
-                            </div>
-                        <div class="col s6" >
-                            <h5 class="light col s8">parser </h5>
-                            <div class="col s4 fixed">
-                                <a id = "siguiente" class="btn-floating darken-2 yellow fixedbutton1"><i class="material-icons">send</i></a>
-                                <a id = "debuguear"  class="btn-floating grey lighten-2 fixedbutton2"><i class="material-icons">bug_report</i></a>
-                                <a id = "ejecutar"  class="btn-floating darken-2 green fixedbutton6"><i class="material-icons">build</i></a>
-                                <a id = "alto"  class="btn-floating darken-2 red fixedbutton4"><i class="material-icons">stop</i></a>
-                                <a id = "salir"  class="btn-floating darken-2 light-green darken-3 fixedbutton5"><i class="material-icons">arrow_drop_up</i></a>
-                                <a id = "auto"  class="btn-floating darken-2 light-blue darken-3 fixedbutton3"><i class="material-icons">flash_auto</i></a>
-                                
-                            </div>
+                    <div class="col s12 offset-s1">
+                        <div id="test3" class="col s12">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>relativa</th>
+                                        <th>absoluta</th>
+                                        <th>Nombre</th>
+                                        <th>tipo</th>
+                                        <th>visibilidad</th>
+                                        <th>tam</th>
+                                        <th>possAmbito</th>
+                                        <th>linea</th>
+                                        <th>lugar</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ambito">
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="col s7">
-                            <style type="text/css">.CodeMirror 
-                              {border-top: 1px solid black; border-bottom: 1px solid black;}
-                            </style>  
-                          <div id=nav>
-                                <div>
-                                  <ul id ="orders"></ul>              
-                                  <div><textarea id="code" name="code">
-                                  (* Example Pascal code *)
-                                  </textarea></div>
-                                </div>
-                          </div>
+                        <div id="test4" class="col s12">
+                            <table>
+                                <tbody id="consola">
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="col s4">
-                            <style type="text/css">.CodeMirror 
-                              {border-top: 1px solid black; border-bottom: 1px solid black;}
-                            </style>  
-                          <div id=nav>
-                                <div>
-                                  <ul id ="orders"></ul>              
-                                  <div><textarea id="d3" name="code">
-                                  (* Example Pascal code *)
-                                  </textarea></div>
-                                </div>
-                          </div>
-                        </div>  
-                    </div>
-                </div>
-            </div>
-            <section>
-                <div   style="height: 700px;  width: 1000px; " id="visualization">
-                    <div class="row">
-                        <div class="col s12 offset-s5">
-                            <div class="tab col s2" id = "ptr">ptr = 0</div>
-                            <div class="tab col s2" id = "pth">heap = 0</div>
-                            <div class="tab col s4" id = "op">op = 0</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12 offset-s2">
-                          <ul class="tabs">
-                            <li class="tab col s2"><a href="#test1">Pila</a></li>
-                            <li class="tab col s2"><a href="#test2">Heap</a></li>
-                            <li class="tab col s3"><a href="#test3">tabla Simbolos</a></li>
-                            <li class="tab col s2"><a href="#test4" class="active">consola</a></li>
-                            <li class="tab col s2"><a href="#test5">error</a></li>
-                          </ul>
-                        </div>
-                        <div  class="col s12 offset-s2">
-                            <div id="test1" class="col s5">
-                                <table>
-                                    <thead>
-                                      <tr>
-                                          <th>posicion</th>
-                                          <th>valor</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody id = "pila">
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div id="test2" class="col s5">
-                                <table>
-                                    <thead>
-                                      <tr>
-                                          <th>posicion</th>
-                                          <th>valor</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody id = "heap">
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div id="test3" class="col s12">
-                                <table>
-                                    <thead>
-                                      <tr>
-                                          <th>#</th>
-                                          <th>Nombre</th>
-                                          <th>tipo</th>
-                                          <th>visibilidad</th>
-                                          <th>tam</th>
-                                          <th>possAmbito</th>
-                                          <th>linea</th>
-                                          <th>lugar</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody id = "ambito">
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div id="test4" class="col s12">
-                                <table>
-                                    <tbody id = "consola">
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div id="test5" class="col s12">
-                                <div   style="height: 1000px;  width: 200px;" id="visualization">
-                                <textarea style="height:400px; width: 956px" id = "error"class="form-control" rows="100" cols="100">
+                        <div id="test5" class="col s12">
+                            <div style="height: 1000px;  width: 200px;" id="visualization">
+                                <textarea style="height:400px; width: 800px" id="error" class="form-control" rows="100" cols="100">
                                         error</textarea>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            <script>
-                  // Or with jQuery
-                  $(document).ready(function(){
-                  $('.tabs').tabs();});
-            </script>
-        </main>
-        <footer class="page-footer teal darken-4">
+            </div>
+        </section>
+        <script>
+            // Or with jQuery
+            $(document).ready(function () {
+                $('.tabs').tabs();
+            });
+        </script>
+    </main>
+    <footer class="page-footer teal darken-4">
+        <div class="container">
+        </div>
+        <div class="footer-copyright">
             <div class="container">
+                © 2017 Universidad de San Carlos de Guatemala
             </div>
-            <div class="footer-copyright">
-                <div class="container">
-                    © 2017 Universidad de San Carlos de Guatemala
-                </div>
-            </div>
-        </footer>
-        
-        <script src="dist/js/materialize.min.js"></script>
-        <script src="dist/js/customInit.js"></script>
-        <!--
+        </div>
+    </footer>
+
+    <script src="dist/js/materialize.min.js"></script>
+    <script src="dist/js/customInit.js"></script>
+    <!--
         <script src="dist/bundle.js" charset="utf-8" ></script>
         
                         <h1>Hello World!</h1>
@@ -246,15 +341,18 @@
         <form id="form" id="chat_form">
             <input id="chat_input1" type="text">
             <input type="submit" value="Send">
-        </form>-->        
-<script src="dist/js/metodosLLamadas.js"></script>
-    
-    </body>
+        </form>-->
+    <script src="dist/js/metodosLLamadas.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.sidenav').sidenav();
+
+            $('.collapsible').collapsible();
+
+        });
+        $(window).scroll(function () { sessionStorage.scrollTop = $(this).scrollTop(); }); $(document).ready(function () { if (sessionStorage.scrollTop != "undefined") { $(window).scrollTop(sessionStorage.scrollTop); } });
+    </script>
+
+</body>
+
 </html>
-
-
-
-
-
-
-

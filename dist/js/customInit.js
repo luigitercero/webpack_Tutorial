@@ -6,7 +6,8 @@ var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
     gutters: ["CodeMirror-linenumbers", "breakpoints"],
     styleActiveLine: true,
     lineNumbers: true,
-    lineWrapping: true
+    lineWrapping: false,
+    autofocus:false
   });
   
   editor.on("gutterClick", function(cm, n) {
@@ -28,7 +29,8 @@ var d3 = CodeMirror.fromTextArea(document.getElementById("d3"), {
     mode: "text/x-pascal",
     styleActiveLine: true,
     lineNumbers: true,
-    lineWrapping: true
+    lineWrapping: true,
+    autofocus:false
   });
  
 

@@ -25,7 +25,7 @@
     btnSend.addEventListener('click',e => {
         const titulo = inputTitulo.value;
         const explicacion = inputExplicacion.value;
-        const codigo = inputCodigo.value;
+        const codigo = editor.getValue();
         const prueba = inputPrueba.value;
         const enunciado =  inputEnunciado.value;
         dbRefList.push({
