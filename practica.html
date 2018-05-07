@@ -135,7 +135,7 @@
 
 }</textarea>
                                     <div style="padding-top: 1em;">
-                                        <a id="probar" class="waves-effect waves-light btn">
+                                        <a id="proba" onclick="pasatext()" class="waves-effect waves-light btn">
                                             Probar
                                         </a>
                                     </div>
@@ -202,7 +202,14 @@
     <script src="dist/js/customInitPractica.js"></script>
     <script src="dist/js/almacenamiento/practicar.js"></script>
     <script src="dist/js/metodosLLamadas.js"></script>
-
+    <SCRIPT language="javascript">
+        function pasatext() {
+            var OpenWindow = window.open('index.html', 'winpop', 'width=1500,height=1000');
+            OpenWindow.dataFromParent = editor.getValue();
+            OpenWindow.init();
+        }
+    </script>
+    </SCRIPT>
 </body>
 
 </html>

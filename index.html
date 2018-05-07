@@ -352,7 +352,16 @@
         });
         $(window).scroll(function () { sessionStorage.scrollTop = $(this).scrollTop(); }); $(document).ready(function () { if (sessionStorage.scrollTop != "undefined") { $(window).scrollTop(sessionStorage.scrollTop); } });
     </script>
-
+    <script type="text/javascript">
+    var dataFromParent; 
+    init();   
+    function init() {
+    	if (dataFromParent!= undefined) {
+    		editor.setValue(dataFromParent);
+    	}
+        
+    }
+</script>
 </body>
 
 </html>
