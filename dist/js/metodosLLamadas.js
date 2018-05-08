@@ -81,7 +81,7 @@ socket.on('consolaP', function (data) {
 socket.on('salidaerror', function (data) {
     // alert(JSON.stringify(data));
     $('#error').val(data);
-    alert("error" + data);
+    alert("error: " + data);
 });
 
 $('#chat_form').submit(function (e) {
@@ -127,9 +127,4 @@ $('#probar').click(function (e) {
     //alert("probar")
     e.preventDefault();
     socket.emit('probar', editor.getValue());
-});
-
-$('#calificar').click(function (e) {
-    e.preventDefault();
-    socket.emit('calificar', d3.getValue());
 });
