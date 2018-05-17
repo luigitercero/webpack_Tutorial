@@ -6,7 +6,7 @@ var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
     gutters: ["CodeMirror-linenumbers", "breakpoints"],
     styleActiveLine: true,
     lineNumbers: true,
-    lineWrapping: false,
+    lineWrapping: true,
     autofocus:false
   });
   

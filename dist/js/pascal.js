@@ -23,7 +23,7 @@ CodeMirror.defineMode("pascal", function() {
 "principal nuevo nada romper continuar estructura crearpuntero obtenerdireccion " +
 "reservarmemoria consultartamanio destruirpuntero si es_verdadero es_falso fin-si " +
 "evaluar_si es_igual_a defecto repetir_mientras hacer mientras ciclo_doble_condicion " +
-"repetir hasta_que repetir_contando hasta desde enciclar contador leer_teclado funcion ");
+"repetir hasta_que repetir_contando hasta desde enciclar contador leer_teclado funcion puntero");
   var atoms = {"null": true};
 
   var isOperatorChar = /[+\-*&%=<>!?|\/]/;

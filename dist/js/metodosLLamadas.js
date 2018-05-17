@@ -48,6 +48,8 @@ socket.on('op', function (data) {
 
 socket.on('archivo', function (data) {
     editor.setValue(data);
+    marcas = [];
+
 });
 
 socket.on('generar', function (data) {
