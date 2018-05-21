@@ -223,8 +223,11 @@
                             <div>
                                 <ul id="orders"></ul>
                                 <div>
-                                    <textarea id="code" name="code">
-                                  (* Example Pascal code *)
+                                    <textarea id="code" name="code">clase main {
+    principal() {
+    
+}
+}
                                   </textarea>
                                 </div>
                             </div>
@@ -352,16 +355,18 @@
         });
         $(window).scroll(function () { sessionStorage.scrollTop = $(this).scrollTop(); }); $(document).ready(function () { if (sessionStorage.scrollTop != "undefined") { $(window).scrollTop(sessionStorage.scrollTop); } });
     </script>
+    
     <script type="text/javascript">
-    var dataFromParent; 
-    init();   
-    function init() {
-    	if (dataFromParent!= undefined) {
-    		editor.setValue(dataFromParent);
-    	}
-        
-    }
-</script>
+        var dataFromParent;
+        init();
+        function init() {
+            if (dataFromParent != undefined) {
+                editor.setValue(dataFromParent);
+            }
+
+        }
+    //prompt("cad");
+    </script>
 </body>
 
 </html>

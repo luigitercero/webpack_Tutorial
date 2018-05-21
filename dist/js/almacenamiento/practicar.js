@@ -50,10 +50,10 @@
         var res = str.split("=");
         var tarea = "clase tarea {"
             + "principal () { \n"
-            + "si(" + res[0] + "==" + res[1] + ") {"
+            + "si(" + res[0] + "==" + res[1] + ") "
             + "es_verdadero { imprimir (\"aprobado\"); }"
             + "es_falso { imprimir (\"reprobado\"); }"
-            + "}"
+            + "fin-si"
             + "}"
 
             + d3.getValue()

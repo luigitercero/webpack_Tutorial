@@ -4,6 +4,11 @@ socket.on('connect', function (data) {
 });
 
 
+socket.on('pedir', function (data) {
+   let datos =  prompt(data);
+   socket.emit('meter', datos);
+});
+
 socket.on('broad', function (data) {
     $('#future').append(data + "<br/>");
 });
@@ -59,7 +64,10 @@ socket.on('generar', function (data) {
 
 socket.on('nuevaPoss', function (data) {
     //alert(JSON.stringify(data));
-    editor.setCursor({ 'line': data[3] - 1, 'ch': 0 });
+    if (data[2] != -1) {
+        editor.setCursor({ 'line': data[3] - 1, 'ch': 0 });
+    }
+
     d3.setCursor({ 'line': data[0] - 1, 'ch': 0 });
 });
 
@@ -106,7 +114,14 @@ $('#ejecutar').click(function (e) {
 
 $('#debuguear').click(function (e) {
     e.preventDefault();
-    socket.emit('debuguear', marcas);
+    let mar = []
+    for (let index = 0; index < marcas.length; index++) {
+        const element = marcas[index];
+        if (element != null) {
+            mar.push(marcas[index]);
+        }
+    }
+    socket.emit('debuguear', mar);
 });
 
 $('#siguiente').click(function (e) {

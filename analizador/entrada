@@ -1,0 +1,216 @@
+{% 
+	Titulo {
+		Clases E Instancias
+	}Descripcion { 
+		Creacion de una clase e Instancia de una
+	} 
+	Ejemplo 
+{
+		clase Entrada_1{ 
+			public void Llenar_Arreglo(){
+		        Objeto obj[3];
+		        obj [0] = Insertar(5, 1);
+		        obj [1] = Insertar(4, 2);
+		        obj [2] = Insertar(3, 3);
+		        caracter salida [50];
+		        Repetir_contando (variable: i; desde: 0; hasta: 2){
+		        	concatenar (salida, "Salida Posicion #E : X = ", i);
+		        	concatenar (salida, convertirAcadena(obj[i].x));
+		        	imprimir (salida);
+		        }
+		    }
+		    privado Objeto Insertar(entero x, entero y){
+		        retorno nuevo Objeto(x, y);
+		    }
+			principal()
+			{
+				Llenar_Arreglo();
+			}
+		}
+		clase Objeto{
+		    publico entero x = 0;
+		    publico Objeto(entero x){
+		        este.x = x;
+		    }
+		}
+}
+	Tipo {
+	A-Coach 
+	}
+	Tarea {
+		realizar un ejemplo de clase, instanciar el objeto crear un objeto enviar los parametros y retornar la suma de ambos
+	} 
+	Resultado { 
+		objeto_retorno(25, 20, 5) = 50
+	}
+%}
+
+{% 
+	Titulo {
+		If Anidado
+	}Descripcion { 
+		Creacion de SI anidados es decir, sentencuas Si dentro de otras. 
+	} 
+	Ejemplo 
+{
+		clase Ejemplo_If_Anidado{ 
+			principal()
+			{
+				entero x_1 = 15;
+		        booleano b_1 = verdadero;
+		        booleano b_2 = falso;
+		        caracter s[5] = {'H', 'o', 'l', 'a'};
+		        decimal d = 25.123456788;
+
+		        Si(verdadero) Es_verdadero{
+	        		Si((b_1 == verdadero && b_2 == falso) || (b_1 == verdadero && b_2 == verdadero)) Es_verdadero{
+		                Si(x_1 >= 10 && x_1 <= 25) Es_verdadero{
+		                    Si(d > 25.10 && d < 25.20) Es_verdadero{
+			                    imprimir("Salida Correcta -- Verdadero...");
+		                    }
+		                    Es_falso{
+		                        imprimir("ERROR...");
+		                    }
+		                    Fin-si
+		                }
+		                Es_falso
+		                {
+		                    imprimir("ERROR...");
+		                }
+		                Fin-si
+		            }
+		            Es_falso
+		            {
+		                imprimir("ERROR...");
+		            }
+		            Fin-si
+	        	}
+		        Es_falso
+		        {
+		            imprimir("ERROR...");
+		        }
+		    	Fin-si
+			}
+		}
+}
+	Tipo {
+	G-Coach 
+	}
+	Tarea {
+		Realizar Una sentencia SI anidada de dos o mas if debera de retornar veerdadero
+	} 
+	Resultado { 
+		Si_Anidado(verdadero, falso, (verdadero && Falso)) = verdadero
+	}
+%}
+
+
+{% 
+	Titulo {Concatenar - Hola Mundo} 
+	Descripcion { Mostrara de salida en la consola un "Hola Mundo" } 
+	Ejemplo 
+{
+		clase Ejemplo_Hola_Mundo{ 
+			vacio salida_cancatenacion(caracter cadena[20]) 
+			{ 
+				imprimir(concatenar("La salida es: ", cadena));
+			}
+			principal()
+			{
+				salida_cancatenacion("Hola Mundo");
+			}
+		}
+		clase AA{
+			entero ax;
+			entero ah;
+		}
+}
+	Tipo { G-Coach }
+	Tarea { Realizar la funcion que reciba de parametro un numero y dos cadenas de 20 caracteres que concatene y retorne el resultado } 
+	Resultado { salida_cancatenacion("Hola ", "Mundo ", 2018) = "Hola Mundo 2018" }
+%}
+
+
+
+
+
+
+
+{% 
+	Titulo {
+		Estructuras y Manipulacion de Puntero o direcciones
+	}Descripcion { 
+		Lista de estructuras
+	} 
+	Ejemplo 
+{
+	estructura Persona [
+	    caracter nombre[25];
+	    caracter genero[20] = nada;
+	    entero edad;
+	    Persona amigo;
+	];
+	clase estruct {
+	    entero Insertar(Caracter nombre[25], caracter genero [2], entero edad){
+	        entero reserva = reservarMemoria(   consultartamanio(Persona)   );
+	        crearPuntero(Persona, per) = reserva;
+	        per->nombre = nombre;
+	        per->genero = genero;
+	        per->edad = edad;
+	        per->amigo = nada;
+	        retorno reserva;
+	    }
+	    principal () {
+	        entero p1 = Insertar("Jose", "M", 15);
+	        entero p2 = Insertar("Henry", "M", 17);
+	        entero p3 = Insertar("Juan", "M", 18);
+	        entero p4 = Insertar("Daniel", "M", 19);
+	        entero p5 = Insertar("Calificacion", "M", 60);
+
+	        Persona ultimo = nada;
+	        crearPuntero(Persona, raiz) = p1;
+	        crearPuntero(Persona, am2) = p2;
+	        crearPuntero(Persona, am3) = p3;
+	        crearPuntero(Persona, am4) = p4;
+	        crearPuntero(Persona, am5) = p5;
+
+	        ultimo = am4;
+	        am4->amigo = p5;
+	        am3->amigo = p4;
+	        am2->amigo = p3;
+	        raiz->amigo = am2;
+
+
+	        imprimir ("<-------------- Listado De Personas ---------------> ");
+	        Persona temp = raiz;
+	        temp = temp->amigo->amigo; //se posiciono en el persona Juan 
+	        caracter salida [50];
+	        si(temp != nada) Es_verdadero{
+	            
+	            Concatenar(salida, "Nombre: ");
+	            Concatenar(salida, temp->nombre);
+	            imprimir(salida);
+	            salida = "";
+
+	            Concatenar(salida, "Edad: #E", p->edad);
+	            imprimir(salida);
+	            salida = "";
+
+	            Concatenar(salida, "Genero: #E", p->genero);
+	            imprimir(salida);
+	            salida = "";
+	        }
+	        fin-si
+	    }    
+	}
+}
+	Tipo {
+	G-Coach 
+	}
+	Tarea {
+		Realizar un Ejemplo de Estructura, que reciba un numero y un enlace a otra estructura, cada parametro es una estructura, deberan estar enlazadas, debera de impirmir en consola el cada valor de la estructura. al finalizar debera de retornar Terminado.
+	} 
+	Resultado { 
+		EDD(1,2) = "Terminado"
+	}
+%}

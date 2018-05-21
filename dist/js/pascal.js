@@ -21,12 +21,12 @@ CodeMirror.defineMode("pascal", function() {
 "caracter booleano concatenar imprimir convertiracadena convertiraentero " +
 "clase publico privado protegido este hereda_de importar @sobrescribir retorno " +
 "principal nuevo nada romper continuar estructura crearpuntero obtenerdireccion " +
-"reservarmemoria consultartamanio destruirpuntero si es_verdadero es_falso fin-si " +
+"reservarmemoria consultartamanio destruirpuntero fin-si si es_verdadero es_falso  " +
 "evaluar_si es_igual_a defecto repetir_mientras hacer mientras ciclo_doble_condicion " +
 "repetir hasta_que repetir_contando hasta desde enciclar contador leer_teclado funcion puntero");
   var atoms = {"null": true};
 
-  var isOperatorChar = /[+\-*&%=<>!?|\/]/;
+  var isOperatorChar = /[+\*&%=<>!?|\/]/;
 
   function tokenBase(stream, state) {
     var ch = stream.next();

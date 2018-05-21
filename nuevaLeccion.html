@@ -145,7 +145,7 @@
                     <div class="file-field input-field col s2">
                         <div class="btn">
                             <span>File</span>
-                            <input type="file">
+                            <input type="file" id="file-input">
                         </div>
                         <div class="file-path-wrapper">
                             <input class="file-path validate" type="text">
@@ -154,8 +154,12 @@
 
                 </div>
 
+                <h3>Contenido del archivo:</h3>
+                <pre id="contenido-archivo"></pre>
+
             </form>
         </div>
+
     </main>
     <footer class="page-footer teal darken-4">
         <div class="container">
@@ -171,6 +175,7 @@
     <script src="dist/js/metodosLLamadas.js"></script>
     <script src="dist/js/almacenamiento/fire.js"></script>
     <script src="dist/js/customInitPractica.js"></script>
-</body>
+    <script src="analizador/gramaticaLeccion.js"></script>
+    <script src="analizador/semantico.js"></script>
 
 </html>
